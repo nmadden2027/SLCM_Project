@@ -1,0 +1,13 @@
+step,column,rows_affected,decision,reason
+Flag duplicates,Status,12,Flagged as is_duplicate; kept in all counts; sensitivity run in Q1,Staff marked these as duplicates but deleting them would silently change Figures 1-2
+Standardize state,Custom field (State),226,"Trim, upper-case, Kentucky -> KY","Same state typed many ways (KY, Ky, ky, Kentucky, ...)"
+ZIP to 5 digits,Custom field (Zip Code),5,Keep first 5 digits,ZIP+4 values would split one ZIP into many groups
+Impossible caregiver age,Age at Intake,4,Set to missing (outside 15-100),Negative or implausible ages are entry errors
+Text to number,Custom field (People in Household 17 and Under),15,"""More than 5"" -> 6 and flagged (true value is 6 or more)",Column is text; top-coded values are lower bounds
+Text to number,Custom field (People in Household 18+),6,"""More than 5"" -> 6 and flagged (true value is 6 or more)",Column is text; top-coded values are lower bounds
+Household size,# Additional Household Members,426,hh_size = additional members + 1 (the primary contact),The column excludes the person who contacted SLCM
+Rent outliers flagged,Custom field (Monthly Rent ($)),1,"Kept as entered and flagged (>$5,000); medians used instead of means","A value like $125,100 may be a typo, but we cannot verify it, so we do not change it"
+Past-due outliers flagged,Custom field (Past Due Rent ($)),1,"Kept as entered and flagged (>$50,000); medians used instead of means","A value like $242,682 may be a typo, but we cannot verify it, so we do not change it"
+High income flag,Custom field (Income Amount ($)),6,"Kept, flagged (>$10,000); medians used instead of means",Could be real or an annual figure entered as monthly; cannot verify
+Impossible member age,household_members Age,9,Set to missing (outside 0-100),Negative ages and values like 1824 are entry errors
+Missing member age,household_members Age,93,Left missing; age summaries use known ages only,Cannot be recovered

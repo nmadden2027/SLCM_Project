@@ -1,0 +1,66 @@
+column,class,dtype,why_kept,pct_missing_intakes_426,n_unique_intakes,most_common_value
+PID,Needed,str,"Person key for repeat contact (Q4) and Figure 2; name-matched, not perfect",0.0,395,P0101
+PID Match Basis,Needed,str,Says how reliable each PID is (name+DOB vs name only); required caveat for repeat-contact work,0.0,1,Name + DOB
+Issue key,Needed,str,Ticket ID; needed for Task 0 and for linking household members,0.0,426,NEIG-10695
+Issue id,Needed,int64,"Internal Jira ID, but needed to explain ticket-number ordering (Task 0)",0.0,426,35312
+Issue Type,Needed,str,Separates intake profiles from sub-tickets,0.0,3,New Profile
+Status,Optional,str,"Case workflow status (Referral Only, Duplicate, etc.); needed to flag duplicates in cleaning",0.0,10,Referral Only
+Resolution,Optional,str,"Only 73 of 639 filled; describes closure, not need",99.5,1,Won't Do
+Created,Needed,str,Ticket creation time; timeline and first-vs-latest ticket ordering,0.0,424,09/Jul/26 1:14 PM
+Updated,Optional,str,"Last edit time; workflow, not need",0.0,382,28/Jul/26 2:42 PM
+Resolved,Optional,str,Closure time; only 73 filled,99.5,2,02/Mar/26 12:45 PM
+Labels.1,Optional,str,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",0.0,39,JCPS
+Labels.2,Optional,str,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",0.9,44,JCPS
+Labels.3,Optional,str,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",7.0,43,SLCM
+Labels.4,Optional,str,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",29.3,35,SNAP
+Labels.5,Optional,str,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",60.8,21,SNAP
+Labels.6,Optional,str,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",82.9,17,SNAP
+# Additional Household Members,Needed,int64,Household size for Q1 and Q3; also a check against the long file,0.0,9,1
+Custom field (City),Optional,str,Location detail; ZIP is the better geographic key,0.5,17,Louisville
+Custom field (Community Ministry),Optional,str,Which SLCM ministry site handled the family,8.5,14,SLCM
+Custom field (Court Date),Optional,str,Only filled for eviction cases (69); supports urgency but sparse,83.8,54,17/Mar/26 12:00 AM
+Age at Intake,Needed,float64,Caregiver age for household description (Q3),0.0,41,27.0
+Custom field (Employment Status),Needed,str,Q2 core variable,0.0,5,Unemployed but want to find work
+Custom field (Eviction Reason),Optional,str,Why eviction is happening; only asked of some families,62.4,5,Non-payment
+Custom field (Eviction Status),Needed,str,Q1 and Figures 1-2 core variable,0.0,4,Not being evicted
+Custom field (Gender),Optional,str,Demographic context,0.2,2,Woman
+Custom field (Goals),Optional,str,Care-path goals the family chose; describes needs,15.3,13,Financial Stability Care Path
+Custom field (Goals).1,Optional,str,Care-path goals the family chose; describes needs,39.2,12,Financial Stability Care Path
+Custom field (Goals).2,Optional,str,Care-path goals the family chose; describes needs,61.7,12,Transportation Care Path
+Custom field (Goals).3,Optional,str,Care-path goals the family chose; describes needs,78.9,10,Transportation Care Path
+Custom field (Household Identities),Optional,str,Household characteristics (e.g. pregnancy); context only,38.3,8,Pregnant or recently postpartum
+Custom field (Household Identities).1,Optional,str,Household characteristics (e.g. pregnancy); context only,77.7,7,Person with chronic health condition
+Custom field (Household repairs required?),Optional,str,Housing condition flag,1.4,2,No
+Custom field (Housing Status),Needed,str,Q1 and Figures 1-2 core variable,0.0,8,Rent- past due
+Custom field (Income Amount ($)),Needed,float64,Q2 core variable,0.0,118,0.0
+Custom field (Insurance Provider for Family),Optional,str,Coverage context,0.0,8,Passport by Molina
+Custom field (Intake Date),Optional,str,Intake date typed by staff; compare with Created,0.0,158,27/Feb/26 12:00 AM
+Custom field (Loss of Income Causation),Optional,str,Reason income fell; helps explain the Q2 mismatch,5.2,15,Job loss
+Custom field (Loss of Income Causation).1,Optional,str,Reason income fell; helps explain the Q2 mismatch,31.7,14,Job loss
+Custom field (Loss of Income Causation).2,Optional,str,Reason income fell; helps explain the Q2 mismatch,56.1,14,Loss of job
+Custom field (Loss of Income Causation).3,Optional,str,Reason income fell; helps explain the Q2 mismatch,77.0,12,Loss of job
+Custom field (Main reason Neighbor stopped paying rent),Optional,str,Cause of rent problems; supporting context,60.8,7,Lost a job/had hours cut
+Custom field (Monthly Rent ($)),Optional,float64,Rent burden context; renters only,60.6,99,1200.0
+Custom field (Other professionals helping with goals?),Optional,str,Yes/No support flag,0.0,2,No
+Custom field (Past Due Rent ($)),Optional,float64,Severity of rent debt; renters only,61.5,121,3000.0
+Custom field (People in Household 17 and Under),Needed,str,Children count for Q3,0.0,7,2
+Custom field (People in Household 18+),Needed,str,Adult count for Q3,0.0,7,1
+Custom field (People in Household 65+),Optional,str,Yes/No flag for seniors,0.0,2,No
+Custom field (Primary Insurance),Optional,str,Coverage type context,8.2,4,Medicaid
+Custom field (Primary Language Spoken in Home),Optional,str,Language context; messy free text (25 values),3.8,25,English 
+Custom field (Race/Ethnicity),Optional,str,Demographic context; handle carefully,9.2,7,Black of African American
+Custom field (Rent Intake Form Goals),Optional,str,What renters said they want help with,60.1,6,Avoid an eviction
+Custom field (Rent Intake Form Goals).1,Optional,str,What renters said they want help with,62.2,8,Come up with a plan to pay back rent
+Custom field (Rent Intake Form Goals).2,Optional,str,What renters said they want help with,66.4,10,Get rental assistance
+Custom field (Rent Intake Form Goals).3,Optional,str,What renters said they want help with,76.8,9,Stay out of court
+Custom field (Rent-to-Income %),Optional,float64,Derived rent burden; check against rent and income,78.2,87,0.0
+Custom field (Section 8 or Housing Voucher),Optional,str,Housing subsidy context,0.0,2,No
+Custom field (Source of income),Needed,str,Q2 core variable,0.9,8,Food benefits - TANF/SNAP
+Custom field (Source of income).1,Needed,str,Q2 core variable,62.9,8,No income
+Custom field (State),Optional,str,Location detail; some non-KY values to check,0.5,12,KY
+Custom field (Utility Past Due),Optional,str,Utility strain; more relevant to Part 2 utility data,41.8,3,LG&E
+Custom field (Zip Code),Needed,str,Q1 geography,0.7,38,40214
+Custom field ([CHART] Date of First Response),Optional,str,Staff response timing; not family need,14.1,366,2026-01-06 13:19:08.46
+Parent,Needed,float64,Numeric parent ID; identifies sub-tickets,100.0,0,
+Parent key,Needed,str,Links each sub-ticket to its intake (Task 0),100.0,0,
+Status Category,Optional,str,Coarse workflow bucket (To Do / In Progress / Done); only for case-outcome context,0.0,3,Done

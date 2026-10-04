@@ -1,0 +1,9 @@
+column,meaning,dtype,pct_missing
+PID,Person key (name-matched) of the primary contact,str,0.0
+Member ID,"PID plus member number, unique per additional household member",str,0.0
+Issue key,Intake ticket the member belongs to (join key to the intake file),str,0.0
+Member #,Order of the member within the ticket,int64,0.0
+Age,"Member age in years (0 = under 1); some values invalid, see cleaning log",float64,9.4
+Gender,Member gender (Male/Female or missing),str,34.7
+Race/Ethnicity,"Free text, very sparse",str,60.9
+Relationship,"Relationship to the primary contact (Son, Daughter, Spouse ...), often missing",str,36.4

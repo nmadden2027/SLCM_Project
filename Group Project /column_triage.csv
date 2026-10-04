@@ -1,0 +1,94 @@
+column,class,reason,dtype,non_null,pct_missing_all_639,pct_missing_intakes_426
+PID,Needed,"Person key for repeat contact (Q4) and Figure 2; name-matched, not perfect",str,639,0.0,0.0
+PID Match Basis,Needed,Says how reliable each PID is (name+DOB vs name only); required caveat for repeat-contact work,str,639,0.0,0.0
+Summary,Drop,"Just the text ""Person <PID>""; duplicates PID",str,639,0.0,0.0
+Issue key,Needed,Ticket ID; needed for Task 0 and for linking household members,str,639,0.0,0.0
+Issue id,Needed,"Internal Jira ID, but needed to explain ticket-number ordering (Task 0)",int64,639,0.0,0.0
+Issue Type,Needed,Separates intake profiles from sub-tickets,str,639,0.0,0.0
+Status,Optional,"Case workflow status (Referral Only, Duplicate, etc.); needed to flag duplicates in cleaning",str,639,0.0,0.0
+Resolution,Optional,"Only 73 of 639 filled; describes closure, not need",str,73,88.6,99.5
+Reporter,Drop,Staff member who logged the ticket (Jira system field),str,639,0.0,0.0
+Reporter Id,Drop,Staff member who logged the ticket (Jira system field),str,639,0.0,0.0
+Creator,Drop,Staff member who created the ticket (Jira system field),str,639,0.0,0.0
+Creator Id,Drop,Staff member who created the ticket (Jira system field),str,639,0.0,0.0
+Created,Needed,Ticket creation time; timeline and first-vs-latest ticket ordering,str,639,0.0,0.0
+Updated,Optional,"Last edit time; workflow, not need",str,639,0.0,0.0
+Resolved,Optional,Closure time; only 73 filled,str,73,88.6,99.5
+Labels.1,Optional,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",str,639,0.0,0.0
+Labels.2,Optional,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",str,632,1.1,0.9
+Labels.3,Optional,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",str,593,7.2,7.0
+Labels.4,Optional,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",str,456,28.6,29.3
+Labels.5,Optional,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",str,248,61.2,60.8
+Labels.6,Optional,"Free tags (SNAP, Workforce-Unemployed, ...) that may cross-check benefit and work fields",str,112,82.5,82.9
+Watchers,Drop,Staff following the ticket (Jira system field),str,639,0.0,0.0
+Watchers.1,Drop,Staff following the ticket (Jira system field),str,366,42.7,14.1
+Watchers Id,Drop,Staff following the ticket (Jira system field),str,639,0.0,0.0
+Watchers Id.1,Drop,Staff following the ticket (Jira system field),str,366,42.7,14.1
+# Additional Household Members,Needed,Household size for Q1 and Q3; also a check against the long file,int64,639,0.0,0.0
+Custom field (City),Optional,Location detail; ZIP is the better geographic key,str,424,33.6,0.5
+Custom field (Community Ministry),Optional,Which SLCM ministry site handled the family,str,390,39.0,8.5
+Custom field (Court Date),Optional,Only filled for eviction cases (69); supports urgency but sparse,str,69,89.2,83.8
+Custom field (Current Employer),Drop,Free text with 205 unique values; identifying and not needed,str,235,63.2,44.8
+Age at Intake,Needed,Caregiver age for household description (Q3),float64,426,33.3,0.0
+Custom field (Employment Status),Needed,Q2 core variable,str,426,33.3,0.0
+Custom field (Eviction Reason),Optional,Why eviction is happening; only asked of some families,str,160,75.0,62.4
+Custom field (Eviction Status),Needed,Q1 and Figures 1-2 core variable,str,426,33.3,0.0
+Custom field (Gender),Optional,Demographic context,str,425,33.5,0.2
+Custom field (Goals),Optional,Care-path goals the family chose; describes needs,str,361,43.5,15.3
+Custom field (Goals).1,Optional,Care-path goals the family chose; describes needs,str,259,59.5,39.2
+Custom field (Goals).2,Optional,Care-path goals the family chose; describes needs,str,163,74.5,61.7
+Custom field (Goals).3,Optional,Care-path goals the family chose; describes needs,str,90,85.9,78.9
+Custom field (Household Identities),Optional,Household characteristics (e.g. pregnancy); context only,str,263,58.8,38.3
+Custom field (Household Identities).1,Optional,Household characteristics (e.g. pregnancy); context only,str,95,85.1,77.7
+Custom field (Household repairs required?),Optional,Housing condition flag,str,420,34.3,1.4
+Custom field (Housing Status),Needed,Q1 and Figures 1-2 core variable,str,426,33.3,0.0
+Custom field (Income Amount ($)),Needed,Q2 core variable,float64,426,33.3,0.0
+Custom field (Insurance Provider for Family),Optional,Coverage context,str,426,33.3,0.0
+Custom field (Intake Date),Optional,Intake date typed by staff; compare with Created,str,426,33.3,0.0
+Has LG&E Account on File,Drop,Utility linkage flag; utility data comes in Part 2,str,639,0.0,0.0
+Custom field (Landlord Name),Drop,Names another person; 309 unique free-text values; not needed,str,345,46.0,19.0
+Custom field (Loss of Income Causation),Optional,Reason income fell; helps explain the Q2 mismatch,str,404,36.8,5.2
+Custom field (Loss of Income Causation).1,Optional,Reason income fell; helps explain the Q2 mismatch,str,291,54.5,31.7
+Custom field (Loss of Income Causation).2,Optional,Reason income fell; helps explain the Q2 mismatch,str,187,70.7,56.1
+Custom field (Loss of Income Causation).3,Optional,Reason income fell; helps explain the Q2 mismatch,str,98,84.7,77.0
+Custom field (Main reason Neighbor stopped paying rent),Optional,Cause of rent problems; supporting context,str,167,73.9,60.8
+Custom field (Monthly Rent ($)),Optional,Rent burden context; renters only,float64,168,73.7,60.6
+Has Email on File,Drop,"Contact-info flag, not need",str,639,0.0,0.0
+Has Phone on File,Drop,"Contact-info flag, not need",str,639,0.0,0.0
+Custom field (Other Professionals Detail),Drop,Free text notes,str,120,81.2,71.8
+Custom field (Other professionals helping with goals?),Optional,Yes/No support flag,str,426,33.3,0.0
+Custom field (Past Due Rent ($)),Optional,Severity of rent debt; renters only,float64,164,74.3,61.5
+Custom field (People in Household 17 and Under),Needed,Children count for Q3,str,426,33.3,0.0
+Custom field (People in Household 18+),Needed,Adult count for Q3,str,426,33.3,0.0
+Custom field (People in Household 65+),Optional,Yes/No flag for seniors,str,426,33.3,0.0
+Custom field (Preferred method of contact),Drop,Staff outreach preference; not about need,str,409,36.0,4.0
+Custom field (Preferred method of contact).1,Drop,Staff outreach preference; not about need,str,256,59.9,39.9
+Custom field (Primary Insurance),Optional,Coverage type context,str,391,38.8,8.2
+Custom field (Primary Language Spoken in Home),Optional,Language context; messy free text (25 values),str,410,35.8,3.8
+Custom field (Pronoun),Drop,Redundant with Gender for this phase,str,416,34.9,2.3
+Custom field (Race/Ethnicity),Optional,Demographic context; handle carefully,str,387,39.4,9.2
+Custom field (Rank),Drop,Jira board sort order,str,639,0.0,0.0
+Custom field (Rent Intake Form Goals),Optional,What renters said they want help with,str,170,73.4,60.1
+Custom field (Rent Intake Form Goals).1,Optional,What renters said they want help with,str,161,74.8,62.2
+Custom field (Rent Intake Form Goals).2,Optional,What renters said they want help with,str,143,77.6,66.4
+Custom field (Rent Intake Form Goals).3,Optional,What renters said they want help with,str,99,84.5,76.8
+Custom field (Rent-to-Income %),Optional,Derived rent burden; check against rent and income,float64,93,85.4,78.2
+Custom field (Response Method),Drop,How the family wants a reply; not about need,str,409,36.0,4.0
+Custom field (Response Method).1,Drop,How the family wants a reply; not about need,str,232,63.7,45.5
+Custom field (Section 8 or Housing Voucher),Optional,Housing subsidy context,str,426,33.3,0.0
+Custom field (Source of income),Needed,Q2 core variable,str,422,34.0,0.9
+Custom field (Source of income).1,Needed,Q2 core variable,str,158,75.3,62.9
+Custom field (State),Optional,Location detail; some non-KY values to check,str,424,33.6,0.5
+Custom field (Utility Past Due),Optional,Utility strain; more relevant to Part 2 utility data,str,248,61.2,41.8
+Has Water Account on File,Drop,Utility linkage flag; utility data comes in Part 2,str,639,0.0,0.0
+Custom field (Zip Code),Needed,Q1 geography,str,423,33.8,0.7
+Custom field ([CHART] Date of First Response),Optional,Staff response timing; not family need,str,366,42.7,14.1
+Custom field ([CHART] Time in Status),Drop,Encoded Jira status timing string,str,73,88.6,99.5
+Comment,Drop,Staff free-text notes that may contain identifying details,str,546,14.6,14.1
+Comment.1,Drop,Staff free-text notes that may contain identifying details,str,223,65.1,49.1
+Comment.2,Drop,Staff free-text notes that may contain identifying details,str,77,87.9,83.1
+Parent,Needed,Numeric parent ID; identifies sub-tickets,float64,213,66.7,100.0
+Parent key,Needed,Links each sub-ticket to its intake (Task 0),str,213,66.7,100.0
+Parent summary,Drop,"Text of the parent ticket title; appears to contain personal names, so do not use or display",str,213,66.7,100.0
+Status Category,Optional,Coarse workflow bucket (To Do / In Progress / Done); only for case-outcome context,str,639,0.0,0.0
+Status Category Changed,Drop,Jira workflow timestamp; not about the family,str,639,0.0,0.0
